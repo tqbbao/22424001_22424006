@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        
+           
         stage ('Pull GitHub repository') {
             steps {
                 git credentialsId: 'github', url: 'https://github.com/tqbbao/22424001_22424006.git'
