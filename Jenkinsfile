@@ -9,7 +9,7 @@ pipeline {
         }
         stage ('Build and publish Docker image') {
             steps {
-                withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: 'repodocker', url: 'https://index.docker.io/v1/') {
                     script {
                         bat 'docker build -t tqbbao/bao .'
                         bat 'docker push tqbbao/bao'
