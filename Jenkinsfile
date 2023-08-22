@@ -10,6 +10,9 @@ pipeline {
 
                 }
             }
+            steps {
+                sh 'node --version'
+            }
         }
         stage ('Pull GitHub repository') {
             steps {
