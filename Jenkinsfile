@@ -13,8 +13,10 @@ pipeline {
         stage ('Build and publish Docker image') {
             steps {
                 withDockerRegistry(credentialsId: '2600ed6e-15bb-4f4d-a25b-9010220b3ca9', url: 'https://index.docker.io/v1/') {
+                    def dockerImage = docker.build("my-docker-image")
                     sh 'docker build -t tqbbao/bao .'
                     sh 'docker push tqbbao/bao'
+                    
                 }  
             }
         }
