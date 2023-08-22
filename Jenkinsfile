@@ -10,8 +10,8 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
                     script {
-                        sh label: '', script: 'docker build -t tqbbao/bao:v1 .'
-                        sh label: '', script: 'docker push tqbbao/bao:v1'
+                        sh label: '', script: 'docker build -t tqbbao/22424001-22424006:v1 .'
+                        sh label: '', script: 'docker push tqbbao/22424001-22424006:v1'
                     }
                 }
             }
