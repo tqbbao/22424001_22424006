@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Build and publish Docker image') {
             steps {
-                withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: 'dockerhub', url: 'https://index.docker.io/v1/') {
                     script {
                         sh label: '', script: 'docker build -t tqbbao/22424001-22424006:v1 .'
                         sh label: '', script: 'docker push tqbbao/22424001-22424006:v1'
