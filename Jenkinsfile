@@ -3,7 +3,7 @@ pipeline {
     stage {
         stage ('Pull GitHub repository') {
             steps {
-                git credentialsId: 'dac50dce-2637-4dcd-a088-107b0ee546bd', url: 'https://github.com/tqbbao/22424001_22424006.git'
+                git credentialsId: 'd81aeb6a-9369-4f68-9863-29de8a40b6fe', url: 'https://github.com/tqbbao/22424001_22424006.git'
             }
         }
         stage ('Build and publish Docker image') {
