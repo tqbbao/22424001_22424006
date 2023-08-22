@@ -1,6 +1,13 @@
 pipeline {
     agent any
+    agent {
+        docker {
+            image 'tqbbao/22424001-22424006:v1'
+            args '-v /var/run/docker.sock:/var/run/docker.sock'
+        }
+    }
     stages {
+        
         stage ('Pull GitHub repository') {
             steps {
                 git credentialsId: 'github', url: 'https://github.com/tqbbao/22424001_22424006.git'
