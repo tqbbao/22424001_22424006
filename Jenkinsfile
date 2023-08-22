@@ -10,8 +10,8 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: 'repodockerhub', url: 'https://index.docker.io/v1/') {
                     script {
-                        sh 'docker build -t tqbbao/bao:v1 .'
-                        sh 'docker push tqbbao/bao:v1'
+                        sh label: '', script: 'docker build -t tqbbao/bao:v1 .'
+                        sh label: '', script: 'docker push tqbbao/bao:v1'
                     }
                 }
             }
