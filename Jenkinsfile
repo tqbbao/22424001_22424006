@@ -8,10 +8,10 @@ pipeline {
         }
         stage ('Build and publish Docker image') {
             steps {
-                withDockerRegistry(credentialsId: '011f9a35-5788-4fe3-9e19-4e77eac5fe0b', url: 'https://index.docker.io/v1/') {
+                withDockerRegistry(credentialsId: '2600ed6e-15bb-4f4d-a25b-9010220b3ca9', url: 'https://index.docker.io/v1/') {
                     sh 'docker build -t tqbbao/22424001-22424006:v1 .'
                     sh 'docker push tqbbao/22424001-22424006:v1'
-                }   
+                }  
             }
         }
     }
