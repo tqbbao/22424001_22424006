@@ -1,9 +1,5 @@
 pipeline {
     agent any
-    tools {
-        // Gọi Docker Tool bằng tên bạn đã cấu hình
-        dockerTool 'Docker'
-    }
     stages {
         stage ('Pull GitHub repository') {
             steps {
@@ -13,12 +9,8 @@ pipeline {
         stage ('Build and publish Docker image') {
             steps {
                 withDockerRegistry(credentialsId: '2600ed6e-15bb-4f4d-a25b-9010220b3ca9', url: 'https://index.docker.io/v1/') {
-                    
-                    docker.withTool('') { 
-                        sh 'docker build -t tqbbao/22424001-22424006 .'
-                        sh 'docker push tqbbao/22424001-22424006'
-                    }
-
+                    sh 'docker build -t tqbbao/22424001-22424006 .'
+                    sh 'docker push tqbbao/22424001-22424006'
                 }  
             }
         }
