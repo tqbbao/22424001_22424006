@@ -10,7 +10,7 @@ pipeline {
             steps {
                 withDockerRegistry(credentialsId: '011f9a35-5788-4fe3-9e19-4e77eac5fe0b', url: 'https://index.docker.io/v1/') {
                     bat 'docker build -t tqbbao/22424001-22424006 .'
-                    bat 'docker push tqbbao/22424001-22424006'
+                    bat 'docker push tqbbao/22424001-22424006:tagname'
                 }   
             }
         }
