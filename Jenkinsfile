@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    tools {dockerTool  "docker" }
     stages {
         stage ('Pull GitHub repository') {
             steps {
