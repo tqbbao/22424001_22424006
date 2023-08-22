@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+        // Gọi Docker Tool bằng tên bạn đã cấu hình
+        dockerTool 'docker'
+    }
     stages {
         stage ('Pull GitHub repository') {
             steps {
