@@ -8,5 +8,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen( 3000, () => {
-    console.log(`22424001:Tran Quoc Bao -- 22424006:Le Ha Giang `);
+    console.log(`22424001:Tran Quoc Bao -- 22424006:Le Ha Giang  `);
 })

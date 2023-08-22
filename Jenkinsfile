@@ -1,7 +1,16 @@
 pipeline {
     agent any
     stages {
-        
+        stage('Front-end') {
+            agent {
+                docker { 
+                    image 'node:8-alpine'
+                    registryUrl 'https://index.docker.io/v1/'
+                    label "test-env"
+
+                }
+            }
+        }
         stage ('Pull GitHub repository') {
             steps {
                 git credentialsId: 'jenkins', url: 'https://github.com/tqbbao/22424001_22424006.git'
