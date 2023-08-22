@@ -9,8 +9,10 @@ pipeline {
         stage ('Build and publish Docker image') {
             steps {
                 withDockerRegistry(credentialsId: 'docker', url: 'https://index.docker.io/v1/') {
-                    sh 'docker build -t tqbbao/bao .'
-                    sh 'docker push tqbbao/bao'
+                    script {
+                        sh 'docker build -t tqbbao/bao .'
+                        sh 'docker push tqbbao/bao'
+                    }
                 }
             }
         }
